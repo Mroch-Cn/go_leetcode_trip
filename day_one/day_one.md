@@ -18,6 +18,42 @@ func twoSum(nums []int, target int) []int {
     
 }
 ```
+这道题主要考的是数组以及循环的使用  
+第一种解法，暴力法使用两个for循环来解决问题，但是这个算法在leetcode的判题中会出现错误，没想明白  
+
+```
+func twoSum(nums []int, target int) []int {
+    res := []int{}
+    for k1,v1 := range nums{
+        for k2,v2 := range nums{
+            if((v1 + v2) == target){
+            res = []int{k1,k2}
+            breake
+            }
+        }
+    }
+    return res
+}
+```
+
+第二种解法
+
+```
+func twoSum(nums []int, target int) []int {
+    m := make(map[int]int, len(nums))
+    res := []int{}
+    for k,v := range nums {
+        if _,val2 := m[target-v];val2 {
+            res = []int{k,m[target-v]}
+            break
+        }
+        m[v] = k
+    }
+    return res
+}
+```
+
+
 ## leetcode02
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in  
 reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a  
