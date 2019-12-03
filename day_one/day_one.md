@@ -36,7 +36,7 @@ func twoSum(nums []int, target int) []int {
 }
 ```
 
-第二种解法
+第二种解法,构造了一个map
 
 ```
 func twoSum(nums []int, target int) []int {
