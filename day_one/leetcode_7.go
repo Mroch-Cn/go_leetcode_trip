@@ -1,9 +1,12 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	reverse(345)
+	fmt.Println(reverse(345))
 }
 
 func reverse(x int) int {
